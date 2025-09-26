@@ -1,0 +1,14 @@
+*{box-sizing:border-box}
+html,body,#app{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f6f8fb;color:#0a2540}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit;cursor:pointer}
+:root{
+  /* Toggle simple pour largeur desktop : 1200px ou 100% */
+  --content-max: 1200px; /* passe à 100% si tu veux full width */
+}
+
+
+
+
