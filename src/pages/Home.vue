@@ -210,8 +210,11 @@ onMounted(() => {
 
 /* HERO */
 .hero{
-  position:relative; background:#0d63ce; color:#fff;
-  padding:1.25rem 1.25rem 5.5rem; border-radius:0 0 2rem 2rem;
+  position:relative;
+  background:#0d63ce; color:#fff;
+  /* ↓ moins d’espace en bas puisque la barre n’est plus en dehors */
+  padding:1.25rem 1.25rem 2.25rem;
+  border-radius:0 0 2rem 2rem;
   overflow:hidden;
 }
 .top{ display:flex; justify-content:space-between; align-items:center; }
@@ -220,17 +223,29 @@ onMounted(() => {
 .claim{ margin:1rem 0 0; font-weight:800; line-height:1.15; font-size:2.15rem; }
 .claim span{ font-size:2.3rem; }
 .emoji-bg{
-  position:absolute; inset:auto -140px -120px -140px; top:0;
-  font-size:22rem; text-align:center; opacity:.22; filter:blur(1px);
+  position:absolute;
+  inset:0;                 /* au lieu de inset:auto -140px -120px -140px */
+  top:0;
+  font-size:22rem;
+  text-align:center;
+  opacity:.18;             /* un peu moins visible */
+  filter:blur(1px);
   pointer-events:none;
 }
 
 /* Search bar */
 .search-wrap{
-  position:absolute; left:50%; transform:translateX(-50%);
-  bottom:-26px; width:min(760px, calc(100% - 2.5rem));
-  background:#fff; border-radius:999px; box-shadow:0 10px 40px rgba(0,0,0,.12);
-  display:flex; align-items:center; padding:.55rem .9rem; gap:.5rem;
+  position:relative;       /* ← plus de absolute */
+  left:auto;               /* reset */
+  transform:none;          /* reset */
+  bottom:auto;             /* reset */
+  width:min(760px, calc(100% - 2.5rem));
+  margin:0 auto;           /* centrée dans .hero */
+  background:#fff;
+  border-radius:999px;
+  box-shadow:0 10px 40px rgba(0,0,0,.12);
+  display:flex; align-items:center;
+  padding:.55rem .9rem; gap:.5rem;
 }
 .loupe{ border:none; background:#ffd15a; width:34px; height:34px; border-radius:999px; }
 .search{ flex:1; border:none; outline:none; font-size:1rem; }
@@ -312,8 +327,3 @@ onMounted(() => {
   .agenda-card{ grid-template-columns:1fr; }
 }
 </style>
-
-
-
-
-
